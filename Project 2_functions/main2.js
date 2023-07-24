@@ -1,5 +1,5 @@
-let x ="10";
-let y ="5";
-let z =x * y;
+number = 5;
+number = number + 3;
+number += 3;
 
-document.write(z)
+document.write(number)
