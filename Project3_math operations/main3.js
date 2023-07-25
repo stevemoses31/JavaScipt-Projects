@@ -6,6 +6,7 @@ let jacob = 10;
 jacob++
 let jose = 12;
 jose--
+window.alert(Math.random() * 100;
 
 
 document.write(z)
