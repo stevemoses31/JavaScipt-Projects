@@ -5,4 +5,4 @@ function myFunction() {
     document.getElementById("Concatenante").innerHTML = sentence;
 }
 
-document.write(id)
+document.write(myFunction)
