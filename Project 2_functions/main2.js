@@ -1,6 +1,6 @@
 function myFunction() { 
     var sentence = "The Tech Academy"; 
     sentence += "is an amazing school!"; 
-    document.getElementById("Concatenante").innerHTML = sentence;
+    document.getElementById("Concatenate").innerHTML = sentence;
 }
-
+console.log("hello");
