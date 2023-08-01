@@ -6,6 +6,10 @@ function not_Function() {
     document.getElementById("Not").innerHTML = !(20>8);
 }
 
+document.write(typeof 5)
+
+document.write("hello" + 3)
+
 document.write(5==5)
 
 x = 25;

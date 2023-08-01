@@ -1,8 +1,8 @@
 function Ride_Function() {
     var Height, Can_ride; 
-    Height = document.getElementById9("Height").vaule; 
+    Height = document.getElementById("Height").value; 
     Can_ride = (Height < 52) ? "You are too short": "You are tall enough"; 
-    document.getElementById("Ride").innerHTML = Can_ride = " to ride.";
+    document.getElementById("Ride").innerHTML = Can_ride + " to ride.";
 }
 
 function Vehicle(Make, Model, Year, Color) {
@@ -12,9 +12,9 @@ function Vehicle(Make, Model, Year, Color) {
     this.Vehicle_Color = Color; 
 }
 
-var Moses = Vehicle("Dodge", "Ram", 2023, "Black");
-var Adriana = Vehicle("Honda", "Civic", 2021, "Red"); 
-var Diego = Vehicle("Bmw", "M3", 2023, "Blue");
+var Moses = new Vehicle("Dodge", "Ram", 2023, "Black");
+var Adriana = new Vehicle("Honda", "Civic", 2021, "Red"); 
+var Diego = new Vehicle("Bmw", "M3", 2023, "Blue");
 function myfunction() {
     document.getElementById("Keywords_and_Constructors").innerHTML =
     "Diego drives a " + Diego.Vehicle_Color + "-colored " + Diego.Vehicle_Model +
