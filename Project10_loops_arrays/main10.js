@@ -24,7 +24,7 @@ function cat_pics() {
     Cat_Picture[1] = "playing";
     Cat_Picture[2] = "eating";
     Cat_Picture[3] = "purring";
-    document.getElementById("cat").innerHTML = "In this picture, the cat is" +  
+    document.getElementById("Cat").innerHTML = "In this picture, the cat is " +  
     Cat_Picture[2] + ".";
 }
 
