@@ -5,6 +5,7 @@ let selectedSquares = [];
 
 //This function is for placing an x or o in a square. 
 function placeXorO(squareNumber) {
+    console.log (activePlayer)
     //This condition ensures a square hasnt been selected already.
     //The .some() method is used to check each element of the selectSquare array
     //to see if it contains the square number clicked on.
@@ -60,7 +61,7 @@ function placeXorO(squareNumber) {
                 //This line calls the function.
                 placeXorO(pickASquare);
                 //This changes our boolean and ends the loop.
-                suceess = true;
+                success = true;
             };
           }
         }
