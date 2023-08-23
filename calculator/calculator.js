@@ -43,7 +43,7 @@ function Handle_Operator(Next_Operator) {
     //When an operator key is pressed we convert the current number
     //displayed on the sceento a number ans then store the result in
     //Calculator_First_Operand if it doesnt already exist.
-    const Value_of_Input = parseFloat(Display_Value); 
+    const Value_Of_Input = parseFloat(Display_Value); 
     //Checks if an operator already exisits and if Wait_Second_Operand os true,
     //then updates the operator an exists from the function.
     if (operator && Calculator.Wait_Second_Operand) {
@@ -57,7 +57,7 @@ function Handle_Operator(Next_Operator) {
         //If operator exists, property lookup is performed for the operator
         //in the Perform_Calculation object and the function that matches the
         //operator is excuted.
-        let result = Perform_Calculation[operator](Value_Now, Value_of_Input);
+        let result = Perform_Calculation[operator](Value_Now, Value_Of_Input);
         //Here we add a fixed amount of numbers after the decimal. 
         result = Number(result).toFixed (9);
         //This will remove any trailing 0's
@@ -76,7 +76,7 @@ const Perform_Calculation = {
     '-': (First_Operand, Second_Operand) => First_Operand - Second_Operand,
     '=': (First_Operand, Second_Operand) => Second_Operand_Operand
 };
-function Calculatoe_Reset() {
+function Calculator_Reset() {
     Calculator.Display_Value = '0';
     Calculator.First_Operand = null;
     Calculator.Wait_Second_Operand = false;
