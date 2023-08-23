@@ -5,7 +5,6 @@ let selectedSquares = [];
 
 //This function is for placing an x or o in a square. 
 function placeXorO(squareNumber) {
-    console.log (activePlayer)
     //This condition ensures a square hasnt been selected already.
     //The .some() method is used to check each element of the selectSquare array
     //to see if it contains the square number clicked on.
@@ -36,14 +35,14 @@ function placeXorO(squareNumber) {
         }
         //This function plays placement sound.
         audio('./media/place.mp3');
-        //This condition checks to see if it is the comptuers turn. 
+        //This condition checks to see if it is the computers turn. 
         if(activePlayer ==='O') {
-            //This function disables clicking for comptuers turn. 
+            //This function disables clicking for computers turn. 
             disableClick();
             //This function waits 1 second before the computer places an image and enables click.
             setTimeout(function () { computersTurn(); }, 1000);
         }
-        //Returning true is needed for our comptuersTurn() function to work.
+        //Returning true is needed for our computersTurn() function to work.
         return true;
     }
     //This function results in random square being selected by the computer.
@@ -107,7 +106,7 @@ function placeXorO(squareNumber) {
                 //This function plays the tie game sound.
                 audio('./media/tie.mp3');
                 //This function sets a .3 second timer before the restGame is called.
-                setTimeout(function () { resestGame(); }, 500);
+                setTimeout(function () { resetGame(); }, 500);
             }
             //This function checks if an array includes 3 strings. It is used to check for 
             //each win condition.
@@ -162,7 +161,7 @@ function placeXorO(squareNumber) {
                 //This variable creates a loop.
                 const animationLoop = requestAnimationFrame(animateLineDrawing);
                 //This method clears content from the last loop iteration.
-                c.clearRect(0, 0, 608, 608,);
+                c.clearRect(0, 0, 608, 608);
                 //This method starts a new path.
                 c.beignPath();
                 //This method moves us to a starting point in our line.
