@@ -3,7 +3,11 @@ const Calculator = {
     //This will display 0 on the calculator screen. 
     Display_Value: '0',
     //This will will hold the operand for any expressions, we set it to null for now.
-    operator: null, 
+    First_Operand: null,
+    //This checks wether or not the second operand has been inputted by the user. 
+    Wait_Second_Operand: false, 
+    //This will hold the operator, we set it to null for now.
+    operator: null,
 };
 
 //This modifies values each time a button is clicked on. 
@@ -17,7 +21,7 @@ function Input_Digit(digit) {
     } else {
         //This overwrites Display_Values if the current value is 0
         //otherwise it adds onto it.
-        Calculator.Displays_Value = Display_Value === '0' ? digit: Display_Value + digit;
+        Calculator.Display_Value = Display_Value === '0' ? digit: Display_Value + digit;
     }
 }
 
@@ -39,7 +43,7 @@ function Handle_Operator(Next_Operator) {
     //When an operator key is pressed we convert the current number
     //displayed on the sceento a number ans then store the result in
     //Calculator_First_Operand if it doesnt already exist.
-    const Value_of_Input = parsefloat(Display_Value); 
+    const Value_of_Input = parseFloat(Display_Value); 
     //Checks if an operator already exisits and if Wait_Second_Operand os true,
     //then updates the operator an exists from the function.
     if (operator && Calculator.Wait_Second_Operand) {
@@ -70,10 +74,10 @@ const Perform_Calculation = {
     '*': (First_Operand, Second_Operand) => First_Operand * Second_Operand,
     '+': (First_Operand, Second_Operand) => First_Operand + Second_Operand,
     '-': (First_Operand, Second_Operand) => First_Operand - Second_Operand,
-    '=': (First_Operand, Second_Operand) => First_Operand
+    '=': (First_Operand, Second_Operand) => Second_Operand_Operand
 };
-function Calculation_Reset() {
-    Calculator_Display_Value = '0';
+function Calculatoe_Reset() {
+    Calculator.Display_Value = '0';
     Calculator.First_Operand = null;
     Calculator.Wait_Second_Operand = false;
     Calculator.operator = null;
@@ -89,7 +93,7 @@ function Update_Display() {
 Update_Display(); 
 //This section monitors button clicks 
 const keys = document.querySelector('.calculator-keys');
-keys.addEventListner('click', (event) => {
+keys.addEventListener('click', (event) => {
     //The target variable is an object that represents the element
     //that was clicked. 
     const { target } = event;
@@ -102,7 +106,7 @@ keys.addEventListner('click', (event) => {
         Update_Display();
         return
     }
-    if (target.classList.contains('decimals')) {
+    if (target.classList.contains('decimal')) {
         Input_Decimal(target.value);
         Update_Display();
         return
