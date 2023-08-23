@@ -12,7 +12,7 @@ function placeXorO(squareNumber) {
         //This variable retrieves the HTML element id that was clicked. 
         let select = document.getElementById(squareNumber); 
         //This condition checkes whos turn it is.
-        if(activePlayer === 'x') {
+        if(activePlayer === 'X') {
             //If activePlayer is equal to 'X', the x.png is placed in HTML
             select.style.backgroundimage = 'url("images/x.png")';
             //Active player may only be 'X' or 'O'so, if not 'X' it must be 'O' 
@@ -122,7 +122,7 @@ function placeXorO(squareNumber) {
         }
 
         //This function makes our body element temporarily unclickable.
-        function diasbleClick() {
+        function disableClick() {
             //This makes our body unclickable.
             body.style.pointerEvents = 'none';
             //This makes our body clickable again after 1 second.
@@ -202,7 +202,7 @@ function placeXorO(squareNumber) {
                 cancelAnimationFrame(animationLoop);
             }
             //This line disallows clicking while the win sound is playing 
-            diasbleClick(); 
+            disableClick(); 
             //this line plays the win sound.
             audio('./media/winGame.mp3');
             //This line calls our main animation loop.
