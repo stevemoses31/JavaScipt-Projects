@@ -1,18 +1,18 @@
 //This variable keeps track of whose turn it is.
 let activePlayer = 'X';
 //This array stores an array of moves. We use this to determine win conditions.
-let selecetedSquares = [];
+let selectedSquares = [];
 
 //This function is for placing an x or o in a square. 
 function placeXorO(squareNumber) {
     //This condition ensures a square hasnt been selected already.
     //The .some() method is used to check each element of the selectSquare array
     //to see if it contains the square number clicked on.
-    if (!selecetedSquares.some(element => includes(squareNumber))) {
+    if (!selectedSquares.some(element => element.includes(squareNumber))) {
         //This variable retrieves the HTML element id that was clicked. 
         let select = document.getElementById(squareNumber); 
         //This condition checkes whos turn it is.
-        if(active player === 'x') {
+        if(activePlayer === 'x') {
             //If activePlayer is equal to 'X', the x.png is placed in HTML
             select.style.backgroundimage = 'url("images/x.png")';
             //Active player may only be 'X' or 'O'so, if not 'X' it must be 'O' 
@@ -21,7 +21,7 @@ function placeXorO(squareNumber) {
             select.style.backgroundImage = 'url("images/o.png")'; 
         }
         //squarenumber and activePlayer are concatenated together and added to array. 
-        selecetedSquares.push(squareNumber + activePlayer);
+        selectedSquares.push(squareNumber + activePlayer);
         //This calls a function to check for any win conditions. 
         checkWinConditions(); 
         //This condition is for changing the active player.
@@ -46,7 +46,7 @@ function placeXorO(squareNumber) {
         return true;
     }
     //This function results in random square being selected by the computer.
-    function comptuersTurn() {
+    function computersTurn() {
         //This  boolean is needed for our while loop.
         let success = false;
         //This variable stores a random number 0-8.
@@ -102,7 +102,7 @@ function placeXorO(squareNumber) {
             else if (arrayIncludes('00', '40', '80')) { drawWinline(100, 100, 520, 520) }
             //This condition checks for a tie. If none of the above conditions are met and
             //9 squares are selected the code executes. 
-            else if (selecetedSquares.length >= 9) {
+            else if (selectedSquares.length >= 9) {
                 //This function plays the tie game sound.
                 audio('./media/tie.mp3');
                 //This function sets a .3 second timer before the restGame is called.
