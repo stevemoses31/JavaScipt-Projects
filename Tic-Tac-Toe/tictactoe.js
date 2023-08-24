@@ -4,7 +4,7 @@ let activePlayer = 'X';
 let selectedSquares = [];
 
 //This function is for placing an x or o in a square. 
-function placeXorO(squareNumber) {
+function placeXOrO(squareNumber) {
     //This condition ensures a square hasnt been selected already.
     //The .some() method is used to check each element of the selectSquare array
     //to see if it contains the square number clicked on.
@@ -14,13 +14,13 @@ function placeXorO(squareNumber) {
         //This condition checkes whos turn it is.
         if(activePlayer === 'X') {
             //If activePlayer is equal to 'X', the x.png is placed in HTML
-            select.style.backgroundimage = 'url("images/x.png")';
+            select.style.backgroundImage = 'url("images/x.png")';
             //Active player may only be 'X' or 'O'so, if not 'X' it must be 'O' 
         } else {
             //if activePlayer is equal to 'O', the o.png is placed in HTML 
             select.style.backgroundImage = 'url("images/o.png")'; 
         }
-        //squarenumber and activePlayer are concatenated together and added to array. 
+        //squareNumber and activePlayer are concatenated together and added to array. 
         selectedSquares.push(squareNumber + activePlayer);
         //This calls a function to check for any win conditions. 
         checkWinConditions(); 
@@ -56,9 +56,9 @@ function placeXorO(squareNumber) {
             //A random number between 0 and 8 is selected. 
             pickASquare = String(Math.floor(Math.random() * 9)); 
             //If the random number evaluated returns true, the square hasnt been selected yet. 
-            if (placeXorO(pickASquare)) {
+            if (placeXOrO(pickASquare)) {
                 //This line calls the function.
-                placeXorO(pickASquare);
+                placeXOrO(pickASquare);
                 //This changes our boolean and ends the loop.
                 success = true;
             };
@@ -139,7 +139,7 @@ function placeXorO(squareNumber) {
         }
 
         //This function utilizes HTML canvas to draw win lines. 
-        function drawWinline(coordX1, coordY1, coordY1, coordX2, coordY2) {
+        function drawWinline(coordX1, coordY1, coordX2, coordY2) {
             //This line accesses our HTML canvas element.
             const canvas = document.getElementById('win-lines');
             //This line gives us access to method and properties to use on our own canvas.
@@ -163,13 +163,13 @@ function placeXorO(squareNumber) {
                 //This method clears content from the last loop iteration.
                 c.clearRect(0, 0, 608, 608);
                 //This method starts a new path.
-                c.beignPath();
+                c.beginPath();
                 //This method moves us to a starting point in our line.
                 c.moveTo(x1, y1);
                 //This method indicates the end point in our line.
                 c.lineTo(x, y);
                 //This method sets the width of our line.
-                c.linewidth = 10;
+                c.lineWidth = 10;
                 //This method stes the color of our line.
                 c.strokeStyle = 'rgba(70, 255, 33, .8)';
                 //This method draws everyhting we laid out above.
