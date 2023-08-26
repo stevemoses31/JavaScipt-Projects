@@ -143,7 +143,7 @@ function placeXOrO(squareNumber) {
             //This line accesses our HTML canvas element.
             const canvas = document.getElementById('win-lines');
             //This line gives us access to method and properties to use on our own canvas.
-            const c = canvas.getContext('2D'); 
+            const c = canvas.getContext('2d'); 
             //This line indicates where the start of a line x axis is.
             let x1 = coordX1,
             //This line indicates where the stsrt of a lines y axis is. 
